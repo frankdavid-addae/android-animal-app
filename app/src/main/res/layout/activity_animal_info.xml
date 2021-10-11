@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/ming_200"
+    tools:context=".AnimalInfoActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvAnimalInfoCircle"
+        android:layout_width="250dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="70dp"
+        app:cardCornerRadius="125dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgAnimalInfoImage"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="350dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="16dp"
+        app:cardCornerRadius="9dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:layout_constraintEnd_toEndOf="@+id/cvAnimalInfoCircle"
+        app:layout_constraintStart_toStartOf="@id/cvAnimalInfoCircle"
+        app:layout_constraintTop_toBottomOf="@+id/cvAnimalInfoCircle">
+
+        <TextView
+            android:id="@+id/txtAnimalInfoName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:background="@color/green_blue_500"
+            android:padding="10dp"
+            android:textColor="@color/ming_200"
+            android:textSize="25sp"
+            android:fontFamily="casual"
+            android:textAlignment="center"
+            tools:text="Placeholder"/>
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
