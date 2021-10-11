@@ -5,10 +5,11 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements AnimalAdapter.AnimalClickInterface {
 
     ArrayList<Animal> animals;
     RecyclerView recyclerView;
@@ -30,9 +31,14 @@ public class MainActivity extends AppCompatActivity {
         animals.add(new Animal("Turtle", R.drawable.turtle));
         animals.add(new Animal("Wolf", R.drawable.wolf));
 
-        AnimalAdapter animalAdapter = new AnimalAdapter(animals, this);
+        AnimalAdapter animalAdapter = new AnimalAdapter(animals, this, this);
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(animalAdapter);
+    }
+
+    @Override
+    public void onAnimalClick(int positionOfAnimal) {
+        Toast.makeText(this, "Clicked " + animals.get(positionOfAnimal).getName(), Toast.LENGTH_SHORT).show();
     }
 }
